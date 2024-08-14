@@ -186,10 +186,10 @@ def main(argv):
       af_model.save_pdb(f"{o.loc}/best_design{m}.pdb")
 
   # save best
-  with open(f"{o.loc}/best.pdb", "w") as handle:
-    remark_text = f"design {best['design']} N {best['n']} RMSD {best['rmsd']:.3f}"
-    handle.write(f"REMARK 001 {remark_text}\n")
-    handle.write(open(f"{o.loc}/best_design{best['design']}.pdb", "r").read())
+  #with open(f"{o.loc}/best.pdb", "w") as handle:
+  #  remark_text = f"design {best['design']} N {best['n']} RMSD {best['rmsd']:.3f}"
+  #  handle.write(f"REMARK 001 {remark_text}\n")
+  #  handle.write(open(f"{o.loc}/best_design{best['design']}.pdb", "r").read())
     
   labels[2] = "mpnn"
   df = pd.DataFrame(data, columns=labels)
