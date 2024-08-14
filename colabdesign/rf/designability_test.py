@@ -171,8 +171,8 @@ def main(argv):
         if "pae" in out:
           out["pae"][-1] = out["pae"][-1] * 31
         rmsd = out["rmsd"][-1]
-        if rmsd < best["rmsd"]:
-          best = {"design":m,"n":n,"rmsd":rmsd}
+        #if rmsd < best["rmsd"]:
+        #  best = {"design":m,"n":n,"rmsd":rmsd}
         af_model.save_current_pdb(f"{o.loc}/all_pdb/design{m}_n{n}.pdb")
         af_model._save_results(save_best=True, verbose=False)
         af_model._k += 1
@@ -183,7 +183,7 @@ def main(argv):
         line = f'>{"|".join(score_line)}\n{out["seq"][n]}'
         fasta.write(line+"\n")
       data += [[out[k][n] for k in labels] for n in range(o.num_seqs)]
-      af_model.save_pdb(f"{o.loc}/best_design{m}.pdb")
+      #af_model.save_pdb(f"{o.loc}/best_design{m}.pdb")
 
   # save best
   #with open(f"{o.loc}/best.pdb", "w") as handle:
